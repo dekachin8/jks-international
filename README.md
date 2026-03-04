@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# JKS International
 
-```sh
-npm create astro@latest -- --template minimal
+Corporate website for JKS International - a holding company with a diverse portfolio spanning language technology, financial markets, sports innovation, and software development.
+
+## Portfolio
+
+- **Languages 4** - Indigenous language reclamation and educational technology
+- **JK Traders** - Strategic options trading and market analysis  
+- **VISUALIZE SPORTS** - Premium golf training and visualization products
+- **JKS Media** - Software and web development solutions
+- **JKS.AI** - Artificial intelligence integration and consulting
+
+## Tech Stack
+
+- **Astro** - Static site generator
+- **Tailwind CSS** - Utility-first styling
+- **Netlify** - Hosting and deployment
+
+## Development
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visit http://localhost:4321
 
-## 🚀 Project Structure
+## Deployment
 
-Inside of your Astro project, you'll see the following folders and files:
+### Netlify
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. Go to https://app.netlify.com
+2. Click "Add new site" → "Import an existing project"
+3. Connect to GitHub and select `jks-international` repo
+4. Configure:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. Click "Deploy site"
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Custom Domain (jks-international.com)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+After site is deployed:
+1. Go to Site settings → Domain management
+2. Add custom domain: `jks-international.com`
+3. Follow DNS configuration instructions
+4. Update your domain registrar with Netlify's nameservers or add CNAME record
 
-Any static assets, like images, can be placed in the `public/` directory.
+## License
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2026 JKS International. All rights reserved.
