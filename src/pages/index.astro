@@ -1,17 +1,108 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const businesses = [
+	{
+		name: 'Languages 4',
+		description: 'Indigenous language reclamation and educational technology',
+		link: 'https://www.languages4.com',
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>`
+	},
+	{
+		name: 'JK Traders',
+		description: 'Strategic options trading and market analysis',
+		link: null,
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`
+	},
+	{
+		name: 'VISUALIZE SPORTS',
+		description: 'Premium golf training and visualization products',
+		link: 'https://www.visualizesports.com',
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>`
+	},
+	{
+		name: 'JKS Media',
+		description: 'Software and web development solutions',
+		link: null,
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`
+	},
+	{
+		name: 'JKS.AI',
+		description: 'Artificial intelligence integration and consulting',
+		link: null,
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`
+	}
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="JKS International">
+	<!-- Hero -->
+	<section class="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+		<!-- Geometric grid background -->
+		<div class="absolute inset-0 opacity-[0.03]">
+			<div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 60px);"></div>
+			<div class="absolute top-10 right-10 w-64 h-64 border-2 border-blue-500 rounded-full opacity-20"></div>
+			<div class="absolute bottom-20 left-20 w-48 h-48 border-2 border-indigo-500 transform rotate-45 opacity-20"></div>
+		</div>
+		
+		<div class="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
+			<!-- Abstract logo -->
+			<div class="relative w-24 h-24 mx-auto mb-8">
+				<div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg transform rotate-6"></div>
+				<div class="absolute inset-2 bg-white rounded transform -rotate-3"></div>
+				<div class="absolute inset-4 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-sm"></div>
+			</div>
+			<h1 class="text-5xl md:text-7xl font-light tracking-tight mb-6">
+				Building businesses<br />that make an impact
+			</h1>
+			<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+				A diverse portfolio spanning language technology, financial markets, sports innovation, and software development
+			</p>
+		</div>
+	</section>
+
+	<!-- Portfolio -->
+	<section class="py-24 bg-white">
+		<div class="max-w-7xl mx-auto px-6 lg:px-8">
+			<h2 class="text-sm uppercase tracking-wider text-gray-500 mb-12">Our Portfolio</h2>
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{businesses.map((business) => (
+					<div class="group border border-gray-100 p-8 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+						<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-6 flex items-center justify-center text-white group-hover:scale-110 transition-transform" set:html={business.icon}></div>
+						<h3 class="text-2xl font-light mb-3">{business.name}</h3>
+						<p class="text-gray-600 mb-4">{business.description}</p>
+						{business.link && (
+							<a 
+								href={business.link} 
+								target="_blank" 
+								rel="noopener noreferrer"
+								class="text-sm text-blue-600 hover:text-blue-700 inline-flex items-center gap-2"
+							>
+								Visit site
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+								</svg>
+							</a>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+		<div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+			<h2 class="text-4xl md:text-5xl font-light mb-6">Let's work together</h2>
+			<p class="text-xl text-gray-300 mb-8">
+				Interested in partnering or learning more about our businesses?
+			</p>
+			<a 
+				href="/contact" 
+				class="inline-block bg-white text-gray-900 px-8 py-4 rounded hover:bg-gray-100 transition font-medium"
+			>
+				Get in touch
+			</a>
+		</div>
+	</section>
+</Layout>
