@@ -1,0 +1,9 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jks-international.com/sitemap.xml
+
+# Crawl delays (in seconds)
+Crawl-delay: 1

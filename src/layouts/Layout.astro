@@ -14,9 +14,61 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="JKS International - Portfolio of businesses across sports, language technology, trading, and software development" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="theme-color" content="#183e4b" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		<meta name="author" content="JKS International" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://jks-international.com/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="JKS International - Building businesses that make an impact" />
+		<meta property="og:image" content="https://jks-international.com/jks-logo-w-type.svg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://jks-international.com/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content="JKS International - Building businesses that make an impact" />
+		<meta property="twitter:image" content="https://jks-international.com/jks-logo-w-type.svg" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://jks-international.com/" />
+
+		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/jks-logo-no-type.svg" />
+		<link rel="apple-touch-icon" href="/jks-logo-no-type.svg" />
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- JSON-LD Schema -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "JKS International",
+			"url": "https://jks-international.com",
+			"logo": "https://jks-international.com/jks-logo-w-type.svg",
+			"description": "A holding company with a diverse portfolio spanning language technology, financial markets, sports innovation, and software development",
+			"sameAs": [
+				"https://linkedin.com/company/jks-international",
+				"https://twitter.com/jks_intl",
+				"https://facebook.com/jksinternational"
+			],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "Customer Service",
+				"email": "tim@jks-international.com"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "US",
+				"addressRegion": "Arizona"
+			}
+		}
+		</script>
 	</head>
 	<body class="bg-white text-gray-900">
 		<nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
