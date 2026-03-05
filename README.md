@@ -10,10 +10,19 @@ Corporate website for JKS International - a holding company with a diverse portf
 - **JKS Media** - Software and web development solutions
 - **JKS.AI** - Artificial intelligence integration and consulting
 
+## Features
+
+- **Responsive Design** - Optimized for all screen sizes
+- **Custom Branding** - Unique color palette and flowing abstract backgrounds
+- **Social Integration** - Social media links throughout the site
+- **Team Showcase** - Leadership team profiles with bios
+- **Portfolio Grid** - Interactive business portfolio cards
+
 ## Tech Stack
 
 - **Astro** - Static site generator
 - **Tailwind CSS** - Utility-first styling
+- **SVG** - Custom graphics and animations
 - **Netlify** - Hosting and deployment
 
 ## Development

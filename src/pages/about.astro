@@ -27,9 +27,31 @@ const team = [
 
 <Layout title="About - JKS International">
 	<!-- Hero -->
-	<section class="py-24 bg-gradient-to-br from-gray-50 to-white">
-		<div class="max-w-4xl mx-auto px-6 lg:px-8">
-			<h1 class="text-5xl md:text-6xl font-light tracking-tight mb-6">
+	<section class="relative py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+		<!-- Unique flowing abstract background -->
+		<svg class="absolute inset-0 w-full h-full opacity-[0.08]" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+			<defs>
+				<filter id="soften-about">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+				</filter>
+			</defs>
+			<!-- Flowing organic curves -->
+			<path d="M 0,200 Q 300,100 600,200 T 1200,200" stroke="#000" stroke-width="2" fill="none" filter="url(#soften-about)" />
+			<path d="M 0,300 Q 200,250 400,300 T 800,300 T 1200,300" stroke="#000" stroke-width="1.5" fill="none" filter="url(#soften-about)" opacity="0.6" />
+			<path d="M 0,150 Q 400,50 800,150 T 1200,150" stroke="#000" stroke-width="1" fill="none" filter="url(#soften-about)" opacity="0.4" />
+			<!-- Abstract flowing shapes -->
+			<circle cx="150" cy="100" r="60" fill="#000" opacity="0.15" filter="url(#soften-about)" />
+			<circle cx="1050" cy="500" r="80" fill="#000" opacity="0.12" filter="url(#soften-about)" />
+			<circle cx="600" cy="50" r="40" fill="#000" opacity="0.1" filter="url(#soften-about)" />
+			<!-- Curved flowing lines -->
+			<path d="M 100,400 Q 300,300 500,400 Q 700,500 900,400" stroke="#000" stroke-width="2" fill="none" filter="url(#soften-about)" opacity="0.5" />
+			<path d="M 0,500 Q 200,450 400,500 T 800,500 T 1200,500" stroke="#000" stroke-width="1" fill="none" filter="url(#soften-about)" opacity="0.3" />
+			<!-- Diagonal flowing elements -->
+			<path d="M 0,0 Q 300,300 600,200 Q 900,100 1200,400" stroke="#000" stroke-width="1.5" fill="none" filter="url(#soften-about)" opacity="0.4" />
+			<path d="M 1200,0 Q 900,200 600,300 Q 300,400 0,600" stroke="#000" stroke-width="1" fill="none" filter="url(#soften-about)" opacity="0.3" />
+		</svg>
+		<div class="relative max-w-4xl mx-auto px-6 lg:px-8">
+			<h1 class="text-5xl md:text-6xl font-light tracking-tight mb-6" style="color: #e07b5a;">
 				Building the future<br />one venture at a time
 			</h1>
 			<p class="text-xl text-gray-600 leading-relaxed">
@@ -44,8 +66,8 @@ const team = [
 			<h2 class="text-sm uppercase tracking-wider text-gray-500 mb-12">Leadership Team</h2>
 			<div class="grid md:grid-cols-2 gap-12">
 				{team.map((member) => (
-					<div class="border-l-2 border-blue-500 pl-8">
-						<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mb-6"></div>
+					<div class="border-l-2 border-[#183e4b] pl-8">
+						<div class="w-16 h-16 rounded-full mb-6" style="background-color: #183e4b;"></div>
 						<h3 class="text-2xl font-light mb-2">{member.name}</h3>
 						<p class="text-sm uppercase tracking-wider text-gray-500 mb-4">{member.title}</p>
 						<p class="text-gray-600 leading-relaxed">{member.bio}</p>
@@ -61,7 +83,7 @@ const team = [
 			<h2 class="text-sm uppercase tracking-wider text-gray-500 mb-12">Our Approach</h2>
 			<div class="grid md:grid-cols-3 gap-8">
 				<div>
-					<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4 flex items-center justify-center text-white">
+					<div class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center text-white" style="background-color: #183e4b;">
 						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
 						</svg>
@@ -70,7 +92,7 @@ const team = [
 					<p class="text-gray-600">Leveraging cutting-edge technology to solve real-world problems</p>
 				</div>
 				<div>
-					<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4 flex items-center justify-center text-white">
+					<div class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center text-white" style="background-color: #183e4b;">
 						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
 						</svg>
@@ -79,7 +101,7 @@ const team = [
 					<p class="text-gray-600">Building long-term partnerships based on trust and transparency</p>
 				</div>
 				<div>
-					<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4 flex items-center justify-center text-white">
+					<div class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center text-white" style="background-color: #183e4b;">
 						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
 						</svg>
